@@ -15,19 +15,19 @@ while opcao != 0:
     print('[0] - Sair')
     opcao = int(input('Digite sua operação: '))
     if opcao == 1:
-        valor_deposito = int(input('Informe o valor de seu depósito: '))
+        valor_deposito = float(input('Informe o valor de seu depósito: '))
         saldo += valor_deposito
         valor_deposito = f'+{str(valor_deposito)}'
         extrato.append(valor_deposito)
     elif opcao == 2:
         if numero_saque != 3:
-            valor_saque = int(input('Informe o valor de seu saque: '))
+            valor_saque = float(input('Informe o valor de seu saque: '))
             if valor_saque > 500:
                 print('Valor máximo de saque é de R$500,00.')
             elif valor_saque <= saldo:
                 saldo -= valor_saque
                 numero_saque += 1
-                valor_saque = f'-{valor_saque}'
+                valor_saque = f'-{str(valor_saque)}'
                 extrato.append(valor_saque)
                 print('Valor sacado!')
             else:
